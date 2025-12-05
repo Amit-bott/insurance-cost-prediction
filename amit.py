@@ -56,9 +56,9 @@ with st.expander("💡 Information about inputs"):
     - **Region**: Geographical region in the US
     """)
 
-# -------------------------------
+
 # Predict Button
-# -------------------------------
+
 if st.button("🚀 Predict Insurance Cost", type="primary"):
     if not model_loaded:
         st.error("Model not loaded. Cannot make predictions.")
@@ -123,9 +123,9 @@ if st.button("🚀 Predict Insurance Cost", type="primary"):
             st.error(f"Error making prediction: {str(e)}")
             st.write("Please ensure all inputs are correctly formatted.")
 
-# -------------------------------
+
 # Sidebar with additional info
-# -------------------------------
+
 with st.sidebar:
     st.title("ℹ️ About")
     st.write("""
@@ -155,8 +155,8 @@ with st.sidebar:
     st.write("**⚠️ Disclaimer:**")
     st.caption("This tool provides estimates only. Actual insurance premiums may vary based on additional factors not included in this model.")
 
-# -------------------------------
+
 # Footer
-# -------------------------------
+
 st.markdown("---")
 st.caption("Built with Streamlit | Machine Learning Model: Random Forest/Gradient Boosting")
