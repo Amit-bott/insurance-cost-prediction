@@ -226,9 +226,6 @@ import pandas as pd
 import requests
 from streamlit_lottie import st_lottie
 
-# --------------------------------------------------
-# PAGE CONFIG
-# --------------------------------------------------
 st.set_page_config(
     page_title="Insurance Cost Predictor 3D",
     layout="wide",
