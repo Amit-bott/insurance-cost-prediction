@@ -10,18 +10,14 @@ st.set_page_config(
     page_icon="💸"
 )
 
-# --------------------------------------------------
-# THEME TOGGLE
-# --------------------------------------------------
+
 theme = st.sidebar.toggle("🌗 Dark Mode", value=False)
 
 bg = "#000000" if theme else "#f4f6f8"
 card = "rgba(20,20,20,0.7)" if theme else "white"
 text = "#ffffff" if theme else "#111827"
 
-# --------------------------------------------------
-# 3D CSS
-# --------------------------------------------------
+
 st.markdown(f"""
 <style>
 .stApp {{
@@ -59,18 +55,14 @@ input, select {{
 </style>
 """, unsafe_allow_html=True)
 
-# --------------------------------------------------
-# LOAD MODEL
-# --------------------------------------------------
+
 try:
     model = joblib.load("insurance_expense_predictor.pkl")
 except:
     st.error("❌ Model file missing")
     st.stop()
 
-# --------------------------------------------------
-# LOTTIE
-# --------------------------------------------------
+
 def load_lottie(url):
     r = requests.get(url)
     return r.json() if r.status_code == 200 else None
@@ -79,9 +71,7 @@ lottie = load_lottie(
     "https://lottie.host/ff2b0e56-4ad9-48fe-ab45-b222ecf60b45/LZqSzgQFq8.json"
 )
 
-# --------------------------------------------------
-# HEADER
-# --------------------------------------------------
+
 c1, c2 = st.columns([2,1])
 with c1:
     st.markdown("<h1>Insurance Cost Prediction</h1>", unsafe_allow_html=True)
@@ -91,9 +81,7 @@ with c2:
     if lottie:
         st_lottie(lottie, height=240)
 
-# --------------------------------------------------
-# INPUT CARD (NO EMPTY BOXES)
-# --------------------------------------------------
+
 st.markdown("<div class='card'>", unsafe_allow_html=True)
 st.subheader("Customer Details")
 
@@ -127,9 +115,6 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("")
 
-# --------------------------------------------------
-# PREDICT
-# --------------------------------------------------
 if st.button("🚀 Predict Insurance Cost"):
     input_df = pd.DataFrame({
         "age": [age],
@@ -147,9 +132,7 @@ if st.button("🚀 Predict Insurance Cost"):
     st.metric("Estimated Insurance Cost", f"$ {prediction:,.2f}")
     st.markdown("</div>", unsafe_allow_html=True)
 
-# --------------------------------------------------
-# SIDEBAR
-# --------------------------------------------------
+
 with st.sidebar:
     st.subheader("ℹ️ About App")
     st.write("""
