@@ -9,21 +9,16 @@ st.set_page_config(
     layout="wide",
     page_icon="💸"
 )
-
-
 theme = st.sidebar.toggle("🌗 Dark Mode", value=False)
 
 bg = "#000000" if theme else "#f4f6f8"
 card = "rgba(20,20,20,0.7)" if theme else "white"
 text = "#ffffff" if theme else "#111827"
-
-
 st.markdown(f"""
 <style>
 .stApp {{
     background: {bg};
 }}
-
 .card {{
     background: {card};
     padding: 25px;
@@ -36,11 +31,9 @@ st.markdown(f"""
 .card:hover {{
     transform: rotateX(6deg) rotateY(-6deg) scale(1.03);
 }}
-
 h1,h2,h3,p,label {{
     color: {text} !important;
 }}
-
 .stButton>button {{
     background: linear-gradient(135deg,#22c55e,#16a34a);
     color:white;
@@ -48,20 +41,16 @@ h1,h2,h3,p,label {{
     border-radius:14px;
     padding:0.7rem 1.8rem;
 }}
-
 input, select {{
     border-radius:12px !important;
 }}
 </style>
 """, unsafe_allow_html=True)
-
-
 try:
     model = joblib.load("insurance_expense_predictor.pkl")
 except:
     st.error("❌ Model file missing")
     st.stop()
-
 
 def load_lottie(url):
     r = requests.get(url)
