@@ -59,8 +59,6 @@ def load_lottie(url):
 lottie = load_lottie(
     "https://lottie.host/ff2b0e56-4ad9-48fe-ab45-b222ecf60b45/LZqSzgQFq8.json"
 )
-
-
 c1, c2 = st.columns([2,1])
 with c1:
     st.markdown("<h1>Insurance Cost Prediction</h1>", unsafe_allow_html=True)
