@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 from streamlit_lottie import st_lottie
 
+
 st.set_page_config(
     page_title="Insurance Cost Predictor 3D",
     layout="wide",
@@ -129,3 +130,4 @@ with st.sidebar:
     • Real ML prediction  
     """)
     st.caption("Built with ❤️ Streamlit")
+
