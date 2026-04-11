@@ -899,3 +899,4 @@ setInterval(() => {
 """
 
 components.html(APP_HTML, height=1180, scrolling=True)
+
